@@ -42,5 +42,58 @@ function SwapTwoNumbers(a,b)
 }
 
 //SwapTwoNumbers(2,1)
+
 /* 
-3. Write a Java program to check if a vowel is present in a string. */
+3. Write a program to check if a vowel is present in a string. */
+
+function FindVowel(input)
+{
+  let vowel = ['a','e','i','o','u'];
+
+  let map = {};
+  for(let i=0;i<vowel.length;i++)
+  {
+   map[vowel[i]] = i;
+  }
+console.log(map);
+  let vowel_count=[];
+  for(let i=0;i<input.length;i++)
+  {
+   if(map.hasOwnProperty(input[i]))
+   {
+    console.log("vowels -- "+input[i]);
+    if(vowel_count.indexOf(input[i])==-1)
+    {
+      vowel_count.push(input[i]);
+    }
+   }
+   else
+   {
+
+    console.log("consonents -- "+input[i]);
+   }
+  }
+  console.log("There are "+ vowel_count.length + " vowels in "+input);
+}
+
+
+//FindVowel('elephant');
+
+function FindVowel1(input)
+{
+  let vowel = ['a','e','i','o','u'];
+  let vowel_count=0;
+  for(let i=0;i<vowel.length;i++)
+  {
+   if(input.indexOf(vowel[i])!=-1)
+   {
+     console.log(vowel[i]);
+    vowel_count = vowel_count+1;
+   }
+  }
+  console.log("There are "+vowel_count+" vowels in "+input);
+
+}
+
+
+FindVowel1('elephant');
